@@ -23,7 +23,7 @@ class RestaurantsController < ApplicationController
     if @restaurant.save
       redirect_to restaurant_url(@restaurant), notice: "Restaurant was successfully created."
     else
-      render :show
+      render :new
     end
   end
 

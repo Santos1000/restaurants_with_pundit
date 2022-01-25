@@ -13,7 +13,6 @@
 
   <tbody>
     <% @restaurants.each do |restaurant| %>
-
       <tr>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.user_id %></td>
@@ -30,6 +29,6 @@
 </table>
 
 <br>
-<% if policy(restaurant).new? %>
+<% if policy(Restaurant).create? %>
   <%= link_to 'New Restaurant', new_restaurant_path %>
 <% end %>

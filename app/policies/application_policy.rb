@@ -47,7 +47,8 @@ class ApplicationPolicy
     end
 
     private
-  def update?
-    attr_reader :user, :scope
+    def update?
+      attr_reader :user, :scope
+    end
   end
 end
