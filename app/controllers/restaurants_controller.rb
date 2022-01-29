@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: %i[ show edit update destroy ]
+  before_action :set_restaurant, only: [ :show, :edit, :update, :destroy ]
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
     @restaurants = policy_scope(Restaurant).order(created_at: :desc)
@@ -11,6 +12,7 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
+    authorize @restaurant
   end
 
   def edit
@@ -19,7 +21,8 @@ class RestaurantsController < ApplicationController
   # POST
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    @restaurant.create = current_user
+    @restaurant.user = current_user
+    authorize @restaurant
     if @restaurant.save
       redirect_to restaurant_url(@restaurant), notice: "Restaurant was successfully created."
     else
@@ -48,6 +51,6 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:name)
+    params.require(:restaurant).permit(:name, :current_user)
   end
 end
