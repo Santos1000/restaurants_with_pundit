@@ -1,14 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class= "content">
+  <div class= "cards">
+    <div class= "card">
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @restaurant.user_id %>
-</p>
+      <p>
+        <strong>Name:</strong>
+        <%= @restaurant.name %>
+      </p>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+      <p>
+        <strong>User:</strong>
+        <%= @restaurant.user_id %>
+      </p>
+
+      <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+      <%= link_to 'Back', restaurants_path %>
+    </div>
+  </div>
+</div>
