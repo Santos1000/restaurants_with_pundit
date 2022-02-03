@@ -1,14 +1,12 @@
+<div class="map" style="background-image: url('<%= @restaurant.picture_url %>')"></div>
 <div class= "content">
   <div class= "cards">
     <div class= "card">
 
       <p id="notice"><%= notice %></p>
 
-      <p>
-        <strong>Name:</strong>
-        <%= @restaurant.name %>
-      </p>
-
+      <h1><%= @restaurant.name %></h1>
+      <p><%= @restaurant.description %></p>
       <p>
         <strong>User:</strong>
         <%= @restaurant.user_id %>
