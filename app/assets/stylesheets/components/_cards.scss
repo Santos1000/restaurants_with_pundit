@@ -1,27 +1,52 @@
 .content {
   display: flex;
+  background-color: $body-color;
 }
 
 .card {
   background-size: cover;
   background-position: center;
-  height: 260px;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  font-weight: bolder;
   display: flex;
+  background-color: $body-color;
+  border-style: hidden;
+  height: 260px;
   align-items: center;
   justify-content: space-around;
   font-size: 22px;
-  color: white;
-  font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  color: $gray2;
+  &:hover {
+    background-color: $gray1;
+    border-radius: 12px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  }
+}
+
+
+// TITLE RESTAURANT
+.title_card{
+  color: $stg-gray;
+  font-size: .875rem;
+  line-height: .875rem;
+  font-weight: 500;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  p{
+    color: $gray2;
+  }
 }
 
 .cards {
-  flex-grow: 1;
+  // flex-grow: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-gap: 16px;
+  // padding: 16px;
+  // grid-template-columns: 85px 1fr;
+  grid-column-gap: 20px;
+  cursor: pointer;
   padding: 16px;
 }
 .card-actions {
@@ -74,3 +99,7 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+    // grid-template-columns: 85px 1fr;
+    // grid-column-gap: 20px;
+    // cursor: pointer;
+    // padding: 16px;
