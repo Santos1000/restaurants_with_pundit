@@ -6,20 +6,21 @@
       <h1>All Restaurants</h1>
 
     </div>
-    <div class= "cards">
-      <div class="row">
-        <% @restaurants.each do |restaurant| %>
-          <div class= "card">
-            <table>
-              <thead>
-                <div class="title_card">
-                  <th>Name</th>
-                  <th>User</th>
-                  <th colspan="3"></th>
-                </tr>
-              </thead>
 
-              <div class="title_card">
+    <div class= "content">
+      <div class="row ">
+        <div class= "cards">
+
+          <%# <div class= "cards"> %>
+          <% @restaurants.each do |restaurant| %>
+            <div class= "card">
+
+              <%# <div class="img_brand_restaurant">
+                <%= @restaurant.picture_url? @restaurant.picture_url : "No restaurant Photo" %>
+              <%# </div> %>
+
+              <div class="title_card col-sm">
+
                 <h1><%= restaurant.name %></h1>
                 <p><%= restaurant.location %></p>
                 <td><%= restaurant.user_id %></td>
@@ -32,12 +33,13 @@
                     <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                   <% end %>
                 </div>
-              <div>
-            </table>
-          </div>
-        <% end %>
-      </div>
+              </div>
+            </div>
+          <% end %>
+        <%# </div> %>
 
+        </div>
+      </div>
     </div>
 
     <br>
