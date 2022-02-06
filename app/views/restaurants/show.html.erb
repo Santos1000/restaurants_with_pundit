@@ -2,9 +2,7 @@
 <div class= "content">
   <div class= "cards">
     <div class= "card">
-      <div class="img_brand_restaurant">
-          <p><%= @restaurant.picture_url %></p>
-      </div>
+
       <p id="notice"><%= notice %></p>
       <div class="title_card">
         <h1><%= @restaurant.name %></h1>
@@ -19,6 +17,7 @@
       <div >
       <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-secondary mt-4 w-100" %>
       </div>
+
       <div >
       <%= link_to 'Back', restaurants_path, class: "btn btn-secondary mt-4 w-100"  %>
       </div>
