@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <div class="row">
+    <h1>New Meals</h1>
+    <div class="mt-3">
+      <%= simple_form_for [ @restaurant, @menu_meal] do |f| %>
+        <%= f.input :meal_name %>
+        <%= f.input :portion_meal %>
+        <%= f.input :description_meal %>
+        <%= f.input :category_meal %>
+        <%= f.input :price_meal %>
+        <%= f.submit "Submit meal", class: "btn btn-primary" %>
+      <% end %>
+
+      <%= link_to 'Back', restaurants_path %>
+    </div>
+  </div>
+</div>

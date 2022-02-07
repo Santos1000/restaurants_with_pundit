@@ -21,6 +21,42 @@
       <div >
       <%= link_to 'Back', restaurants_path, class: "btn btn-secondary mt-4 w-100"  %>
       </div>
+      <div>
+      <%= link_to 'Leave a new meal', new_restaurant_menu_meal_path(@restaurant) %>
+      <%= link_to 'Leave a new beverage', new_restaurant_menu_beverage_path(@restaurant) %>
+      </div>
+    </div>
+    <div>
+      <ul class="list-group">
+        <%# @restaurant.menu_meals.each do |meal| %>
+        <%# <li class="list-group-item"><%= meal.meal_name %></li> %>
+        <%# end %>
+      </ul>
+    </div>
+    <div>
+      <%# <li class="list-group-item">
+        <%= menu_meal.meal_name%>
+        <%# <%= link_to "Remove",
+                    name_meal_path(name_meal),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+      <%# </li> %> %> %>
+    </div>
+    <div>
+      <%# <ul class="list-group">
+        <% @restaurant.menu_beverages.each do |beverage| %>
+          <%# <li class="list-group-item"><%= beverage.name_beverage %></li>
+        <%# <% end %> %> %>
+      </ul> %>
+    </div>
+    <div>
+      <%# <li class="list-group-item">
+        <%= menu_beverage.content%>
+        <%# <%= link_to "Remove",
+                    review_path(review),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %> %>
+      </li> %>
     </div>
   </div>
 </div>
