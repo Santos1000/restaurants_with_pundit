@@ -28,19 +28,35 @@
     </div>
     <div>
       <ul class="list-group">
-        <% @restaurant.reviews.each do |review| %>
-          <li class="list-group-item"><%= review.content %></li>
-        <% end %>
+        <%# @restaurant.menu_meals.each do |meal| %>
+        <%# <li class="list-group-item"><%= meal.meal_name %></li> %>
+        <%# end %>
       </ul>
     </div>
     <div>
-      <li class="list-group-item">
-        <%= menu_meal.content || menu_meal.content%>
-        <%= link_to "Remove",
-                    review_path(review),
+      <%# <li class="list-group-item">
+        <%= menu_meal.meal_name%>
+        <%# <%= link_to "Remove",
+                    name_meal_path(name_meal),
                     method: :delete,
                     data: { confirm: "Are you sure?" } %>
-      </li>
+      <%# </li> %> %> %>
+    </div>
+    <div>
+      <%# <ul class="list-group">
+        <% @restaurant.menu_beverages.each do |beverage| %>
+          <%# <li class="list-group-item"><%= beverage.name_beverage %></li>
+        <%# <% end %> %> %>
+      </ul> %>
+    </div>
+    <div>
+      <%# <li class="list-group-item">
+        <%= menu_beverage.content%>
+        <%# <%= link_to "Remove",
+                    review_path(review),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %> %>
+      </li> %>
     </div>
   </div>
 </div>
