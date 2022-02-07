@@ -26,5 +26,21 @@
       <%= link_to 'Leave a new beverage', new_restaurant_menu_beverage_path(@restaurant) %>
       </div>
     </div>
+    <div>
+      <ul class="list-group">
+        <% @restaurant.reviews.each do |review| %>
+          <li class="list-group-item"><%= review.content %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div>
+      <li class="list-group-item">
+        <%= menu_meal.content || menu_meal.content%>
+        <%= link_to "Remove",
+                    review_path(review),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+      </li>
+    </div>
   </div>
 </div>
