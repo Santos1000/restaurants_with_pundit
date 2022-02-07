@@ -1,4 +1,8 @@
 class MenuMealsController < ApplicationController
+  def index
+    @menu_meal = Menu_meal.where(user_id: params[:user_id])
+  end
+
   def new
     # we need @restaurant in our `simple_form_for`
     @restaurant = Restaurant.find(params[:restaurant_id])

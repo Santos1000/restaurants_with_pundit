@@ -1,12 +1,20 @@
 class MenuBeveragesController < ApplicationController
+  def index
+    @menu_beverage = Menu_beverage.where(user_id: params[:user_id])
+  end
+
   def new
     # we need @restaurant in our `simple_form_for`
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @menu_berage = MenuBerage.new
+    @menu_beverage = MenuBeverage.new
+    #(permitted_attributes(MenuBeverage))
+    authorize @menu_beverage
   end
 
   def create
     @menu_beverage = MenuBeverage.new(menu_beverage_params)
+    # authorize @menu_beverage
+
     # we need `restaurant_id` to associate menu_beverage with corresponding restaurant
     @restaurant = MenuBeverage.find(params[:restaurant_id])
     @menu_beverage.restaurant = @restaurant

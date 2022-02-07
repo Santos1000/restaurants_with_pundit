@@ -1,8 +1,16 @@
-<%= simple_form_for [ @restaurant, @menu_beverage] do |f| %>
-  <%= f.input :name_beverage %>
-  <%= f.input :portion_beverage %>
-  <%= f.input :description_beverage %>
-  <%= f.input :category_beverage %>
-  <%= f.input :price_beverage %>
-  <%= f.submit "Submit beverage", class: "btn btn-primary" %>
-<% end %>
+<div class="container mt-4">
+  <div class="row">
+    <h1>New Beverage</h1>
+    <div class="mt-3">
+      <%=simple_form_for [ @restaurant, @menu_beverage] do |f| %>
+        <%=f.input :name_beverage %>
+        <%=f.input :portion_beverage %>
+        <%=f.input :description_beverage %>
+        <%=f.input :category_beverage %>
+        <%=f.input :price_beverage %>
+        <%=f.submit "Submit beverage", class: "btn btn-primary" %>
+      <% end %>
+      <%= link_to 'Back', restaurants_path %>
+    </div>
+  </div>
+</div>

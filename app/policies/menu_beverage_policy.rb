@@ -4,7 +4,7 @@ class MenuBeveragePolicy < ApplicationPolicy
       scope.all
     end
   end
-  
+
   def new?
     true
   end
@@ -14,6 +14,12 @@ class MenuBeveragePolicy < ApplicationPolicy
   end
 
   def destroy?
-    true
+    is_owner_or_admin
+  end
+
+  private
+
+  def is_owner_or_admin
+    user == record.user || user.admin
   end
 end

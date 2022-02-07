@@ -14,6 +14,6 @@ class MenuMealPolicy < ApplicationPolicy
   end
 
   def destroy?
-    true
+    is_owner_or_admin
   end
 end
