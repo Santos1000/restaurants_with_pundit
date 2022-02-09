@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_07_122254) do
+ActiveRecord::Schema.define(version: 2022_02_09_203303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2022_02_07_122254) do
     t.decimal "price_beverage"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "restaurant_id", null: false
+    t.index ["restaurant_id"], name: "index_menu_beverages_on_restaurant_id"
   end
 
   create_table "menu_beverages_meals", id: false, force: :cascade do |t|
@@ -38,6 +40,8 @@ ActiveRecord::Schema.define(version: 2022_02_07_122254) do
     t.decimal "price_meal"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "restaurant_id", null: false
+    t.index ["restaurant_id"], name: "index_menu_meals_on_restaurant_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -67,5 +71,7 @@ ActiveRecord::Schema.define(version: 2022_02_07_122254) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "menu_beverages", "restaurants"
+  add_foreign_key "menu_meals", "restaurants"
   add_foreign_key "restaurants", "users"
 end

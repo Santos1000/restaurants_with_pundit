@@ -1,7 +1,7 @@
 class MenuMealPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      @scope.all
     end
   end
 
@@ -15,5 +15,11 @@ class MenuMealPolicy < ApplicationPolicy
 
   def destroy?
     is_owner_or_admin
+  end
+
+  private
+
+  def is_owner_or_admin
+    user == record.user || user.admin
   end
 end
