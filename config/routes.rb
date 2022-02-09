@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :restaurants do
-    resources :menu_meals, only: [ :new, :create ]
-    resources :menu_beverages, only: [ :new, :create ]
+    resources :menu_meals, only: [ :index, :new, :create ]
+    resources :menu_beverages, only: [ :index, :new, :create ]
   end
   resources :menu_meals, only: [ :destroy ]
   resources :menu_beverages, only: [ :destroy ]

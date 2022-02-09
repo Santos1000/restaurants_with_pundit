@@ -21,7 +21,7 @@ class MenuBeveragesController < ApplicationController
     if @menu_beverage.save
       redirect_to restaurant_path(@restaurant), notice: "Beverage was successfully created."
     else
-      reder :new
+      render :new
     end
   end
 
