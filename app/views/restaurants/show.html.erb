@@ -4,12 +4,15 @@
     <div class= "card">
 
       <p id="notice"><%= notice %></p>
-      <div class="title_card">
+      <div class="title_card row justify-content-between">
         <h1><%= @restaurant.name %></h1>
-        <p><%= @restaurant.location %></p>
+        <div>
+          <p><%= @restaurant.location %></p>
 
-        <p><%= @restaurant.description %></p>
-        <p>
+          <p><%= @restaurant.description %></p>
+        </div>
+
+
           <strong>User:</strong>
           <%= @restaurant.user_id %>
         </p>
@@ -26,20 +29,23 @@
       <%= link_to 'Leave a new beverage', new_restaurant_menu_beverage_path(@restaurant), class: "btn btn-secondary mt-4 w-100"  %>
       </div>
     </div>
-    <div>
-      <ul class="list-group">
-        <%= @restaurant.menu_meals.each do |menu_meal| %>
-          <li class="list-group-item"><%= menu_meal.meal_name%></li>
-          <li class="list-group-item"><%= menu_meal.description_meal %></li>
-          <li class="list-group-item"><%= menu_meal.portion_meal %></li>
-          <li class="list-group-item"><%= menu_meal.price_meal%></li>
-                  <%= link_to "Remove",
-                    menu_meal_path(menu_meal),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } %>
-        <% end %>
-      </ul>
-    </div>
+
+
+    <%= @restaurant.menu_meals.each do |menu_meal| %>
+
+      <div class="card-product">
+        <img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1292&q=80" />
+        <div class="card-product-infos">
+          <h2><%= menu_meal.meal_name%></h2>
+          <p><%= menu_meal.description_meal %></p>
+          <p><%= menu_meal.portion_meal %></p>
+          <p><%= menu_meal.price_meal%></p>
+        </div>
+      </div>
+
+    <% end %>
+
+
     <div>
       <%# <ul class="list-group">
         <% @restaurant.menu_beverages.each do |beverage| %>
@@ -54,6 +60,11 @@
                     review_path(review),
                     method: :delete,
                     data: { confirm: "Are you sure?" } %>
+
+                              <%# <%= link_to "Remove",
+            menu_meal_path(menu_meal),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
       </li>
   </div>
 </div>
