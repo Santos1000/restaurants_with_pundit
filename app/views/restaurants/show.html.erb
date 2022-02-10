@@ -45,15 +45,19 @@
 
     <% end %>
 
+    <%= @restaurant.menu_beverages.each do |menu_beverage| %>
 
-    <div>
-      <%# <ul class="list-group">
-        <% @restaurant.menu_beverages.each do |beverage| %>
-          <%# <li class="list-group-item"><%= beverage.name_beverage %></li>
-        <%# <% end %> %> %>
-      </ul> %>
-    </div>
-    <div>
+      <div class="card-product">
+        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" />
+        <div class="card-product-infos">
+          <h2><%= menu_beverage.name_beverage%></h2>
+          <p><%= menu_beverage.description_beverage %></p>
+          <p><%= menu_beverage.portion_beverage %></p>
+          <p><%= menu_beverage.price_beverage%></p>
+        </div>
+      </div>
+
+    <% end %>
       <%# <li class="list-group-item">
         <%= menu_beverage.content%>
         <%# <%= link_to "Remove",
@@ -61,7 +65,7 @@
                     method: :delete,
                     data: { confirm: "Are you sure?" } %>
 
-                              <%# <%= link_to "Remove",
+            <%# <%= link_to "Remove",
             menu_meal_path(menu_meal),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
