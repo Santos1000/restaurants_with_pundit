@@ -1,6 +1,6 @@
 .content {
   display: flex;
-  background-color: $body-color;
+  background-color: $color-background;
 }
 
 .card {
@@ -8,7 +8,7 @@
   background-position: center;
   font-weight: bolder;
   display: flex;
-  background-color: $body-color;
+  background-color: $color-background;
   border-style: hidden;
   // height: 260px;
   // align-items: center;
