@@ -1,11 +1,12 @@
 class MenuBeveragesController < ApplicationController
+  before_action :set_restaurant, only: [ :new, :create ]
+
   def index
     @menu_beverage = Menu_beverage.where(user_id: params[:user_id])
   end
 
   def new
     # we need @restaurant in our `simple_form_for`
-    @restaurant = Restaurant.find(params[:restaurant_id])
     @menu_beverage = MenuBeverage.new
     #(permitted_attributes(MenuBeverage))
     authorize @menu_beverage
@@ -16,7 +17,6 @@ class MenuBeveragesController < ApplicationController
     # authorize @menu_beverage
 
     # we need `restaurant_id` to associate menu_beverage with corresponding restaurant
-    @restaurant = MenuBeverage.find(params[:restaurant_id])
     @menu_beverage.restaurant = @restaurant
     if @menu_beverage.save
       redirect_to restaurant_path(@restaurant), notice: "Beverage was successfully created."
@@ -32,6 +32,11 @@ class MenuBeveragesController < ApplicationController
   end
 
   private
+
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    authorize @restaurant
+  end
 
   def menu_beverage_params
     params.require(:menu_beverage).permit(:name_beverage, :portion_meal, :description_meal, :category_meal, :price_meal)
