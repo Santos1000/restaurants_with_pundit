@@ -1,35 +1,39 @@
 <div class="map" style="background-image: url('<%= @restaurant.picture_url %>')"></div>
-<div class= "content">
-  <div class= "cards">
-    <div class= "card">
+<div class= "content-b">
+  <p id="notice"><%= notice %></p>
+  <div class="title_card row justify-content-between">
+    <h1><%= @restaurant.name %></h1>
+    <div>
+      <p><%= @restaurant.location %></p>
 
-      <p id="notice"><%= notice %></p>
-      <div class="title_card row justify-content-between">
-        <h1><%= @restaurant.name %></h1>
-        <div>
-          <p><%= @restaurant.location %></p>
+      <p><%= @restaurant.description %></p>
 
-          <p><%= @restaurant.description %></p>
-        </div>
-
-
-          <strong>User:</strong>
-          <%= @restaurant.user_id %>
-        </p>
-      </div>
-      <div >
-      <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-secondary mt-4 w-100" %>
-      </div>
-
-      <div >
-      <%= link_to 'Back', restaurants_path, class: "btn btn-secondary mt-4 w-100"  %>
-      </div>
-      <div>
-      <%= link_to 'Leave a new meal', new_restaurant_menu_meal_path(@restaurant), class: "btn btn-secondary mt-4 w-100"  %>
-      <%= link_to 'Leave a new beverage', new_restaurant_menu_beverage_path(@restaurant), class: "btn btn-secondary mt-4 w-100"  %>
-      </div>
+      <a><strong>User:</strong><%= @restaurant.user_id %></a>
     </div>
+  </div>
 
+  <div>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <%= link_to 'Leave a new beverage', new_restaurant_menu_beverage_path(@restaurant), class: "nav-link"  %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Leave a new meal', new_restaurant_menu_meal_path(@restaurant), class: "nav-link"  %>
+      </li>
+    </ul>
+  </div>
+
+  <div >
+    <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-secondary mt-4 w-25" %>
+  </div>
+
+  <div >
+    <%= link_to 'Back', restaurants_path, class: "btn btn-secondary mt-4 w-25"  %>
+  </div>
+
+
+
+  <div class='restaurant-menu-group__container '></div>
 
     <%= @restaurant.menu_meals.each do |menu_meal| %>
 
@@ -58,17 +62,19 @@
       </div>
 
     <% end %>
-      <%# <li class="list-group-item">
-        <%= menu_beverage.content%>
-        <%# <%= link_to "Remove",
-                    review_path(review),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } %>
-
-            <%# <%= link_to "Remove",
-            menu_meal_path(menu_meal),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-      </li>
   </div>
+
+    <%# <li class="list-group-item">
+      <%= menu_beverage.content%>
+      <%# <%= link_to "Remove",
+                  review_path(review),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+
+        <%# <%= link_to "Remove",
+          menu_meal_path(menu_meal),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+
+
 </div>
