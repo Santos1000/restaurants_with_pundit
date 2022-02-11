@@ -13,28 +13,36 @@
 
           <%# <div class= "cards"> %>
           <% @restaurants.each do |restaurant| %>
-            <div class= "card">
+            <%# <div class="clickable"> %>
+              <div class= "card">
 
-              <%# <div class="img_brand_restaurant">
-                <%= @restaurant.picture_url? @restaurant.picture_url : "No restaurant Photo" %>
-              <%# </div> %>
+                <%# <div class="img_brand_restaurant">
+                  <%= @restaurant.picture_url? @restaurant.picture_url : "No restaurant Photo" %>
+                <%# </div> %>
 
-              <div class="title_card col-sm">
+                <div class="title_card row justify-content-between">
+                  <div class='restaurant-box'>
+                    <h2><%= restaurant.name %></h2>
+                    <p><%= restaurant.location %></p>
+                    <p>User:<%= restaurant.user_id %></p>
+                    <div class='figure-container'>
+                      <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large">
+                    </div>
+                  </div>
 
-                <h1><%= restaurant.name %></h1>
-                <p><%= restaurant.location %></p>
-                <td><%= restaurant.user_id %></td>
-                <div class="card-actions">
-                  <td><%= link_to 'Show', restaurant %></td>
-                  <% if policy(restaurant).edit? %>
-                    <%= link_to "Edit", edit_restaurant_path(restaurant) %>
-                  <% end %>
-                  <% if policy(restaurant).destroy? %>
-                    <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                  <% end %>
+                  <div class="card-actions">
+                    <td><%= link_to 'Show', restaurant %></td>
+                    <% if policy(restaurant).edit? %>
+                      <%= link_to "Edit", edit_restaurant_path(restaurant) %>
+                    <% end %>
+                    <% if policy(restaurant).destroy? %>
+                      <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <% end %>
+                  </div>
+
                 </div>
               </div>
-            </div>
+            <%# </div> %>
           <% end %>
         <%# </div> %>
 
