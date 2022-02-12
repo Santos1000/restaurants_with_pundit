@@ -27,6 +27,7 @@ class MenuBeveragesController < ApplicationController
 
   def destroy
     @menu_beverage = MenuBeverage.find(params[:id])
+    authorize @menu_beverage
     @menu_beverage.destroy
     redirect_to restaurant_path(@menu_beverage.restaurant), notice: "Beverage was successfully destroyed."
   end
