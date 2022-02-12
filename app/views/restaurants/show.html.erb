@@ -10,18 +10,25 @@
 
       <a><strong>User:</strong><%= @restaurant.user_id %></a>
     </div>
+
+    <ul>
+      <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-light mt-4 " %>
+ 
+      <%= link_to 'Back', restaurants_path, class: "btn btn-light mt-4 "  %>
+    </ul>
+
   </div>
 
   <div>
     <ul class="nav justify-content-end">
-      <li class="nav-item">
+      <li class="btn-item">
           <%= link_to 'Leave a new beverage', new_restaurant_menu_beverage_path(@restaurant), class: "nav-link"  %>
       </li>
-      <li class="nav-item">
+      <li class="btn-item">
         <%= link_to 'Leave a new meal', new_restaurant_menu_meal_path(@restaurant), class: "nav-link"  %>
       </li>
     </ul>
-    <%# <li class="nav-item"> %>
+    <%# <li class="btn-item"> %>
       <%#= [ @restaurant, @menu_meal].each do |menu_meal| %>
         <%# if policy(menu_meal).new? %>
           <%#= link_to 'Leave a new meal', new_menu_meal_path(menu_meal), class: "nav-link"  %>
@@ -30,13 +37,7 @@
     <%# </li> %>
   </div>
 
-  <div>
-    <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-secondary mt-4 w-25" %>
-  </div>
 
-  <div>
-    <%= link_to 'Back', restaurants_path, class: "btn btn-secondary mt-4 w-25"  %>
-  </div>
 
   <div class='restaurant-menu-group__container '></div>
 
@@ -50,15 +51,18 @@
           <p><%= menu_meal.portion_meal %></p>
           <p><%= menu_meal.price_meal%></p>
         </div>
+
+        <div class="btn-item-menu">
+          <% if policy(menu_meal).destroy? %>
+            <%= link_to "Remove",
+                  menu_meal_path(menu_meal),
+                  class: "btn btn-secondary mt-4 ",
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+          <% end %>
+        </div>
       </div>
-      <li class="list-group-item">
-        <% if policy(menu_meal).destroy? %>
-          <%= link_to "Remove",
-                      menu_meal_path(menu_meal),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } %>
-        <% end %>
-      </li>
+
     <% end %>
 
     <% @restaurant.menu_beverages.each do |menu_beverage| %>
@@ -71,16 +75,17 @@
           <p><%= menu_beverage.portion_beverage %></p>
           <p><%= menu_beverage.price_beverage%></p>
         </div>
-      </div>
 
-      <li class="list-group-item">
-        <% if policy(menu_beverage).destroy? %>
-          <%= link_to "Remove",
-                      menu_beverage_path(menu_beverage),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } %>
-        <% end %>
-      </li>
+        <div class="btn-item-menu">
+          <% if policy(menu_beverage).destroy? %>
+            <%= link_to "Remove",
+                  menu_beverage_path(menu_beverage),
+                  class: "btn btn-secondary mt-4 ",
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+          <% end %>
+        </div>
+      </div>
 
     <% end %>
   </div>
