@@ -1,7 +1,7 @@
 class MenuBeveragePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      @scope.all
     end
   end
 
@@ -20,6 +20,6 @@ class MenuBeveragePolicy < ApplicationPolicy
   private
 
   def is_owner_or_admin
-    user == record.user || user.admin
+    user == record.restaurant.user || user.admin
   end
 end

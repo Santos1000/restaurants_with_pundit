@@ -65,6 +65,12 @@
           <p><%= menu_beverage.price_beverage%></p>
         </div>
       </div>
+      <li class="list-group-item">
+        <%= link_to "Remove",
+                    menu_beverage_path(menu_beverage),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+      </li>
 
     <% end %>
   </div>
