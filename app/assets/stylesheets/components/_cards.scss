@@ -27,7 +27,7 @@
 }
 
 
-// TITLE RESTAURANT
+//=========TITLE RESTAURANT==============//
 .title_card{
   color: $stg-gray;
   font-size: .875rem;
@@ -98,8 +98,54 @@
 //   left: 16px;
 //   top: -5px;
 // }
+//============HOME PAGE=============//
+.col-lg-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+//============HOME PAGE CARDS=============//
+.services .service-box {
+  // box-shadow: 0px 0 30px rgba(1,41,112,0.08);
+  height: 100%;
+  padding: 60px 30px;
+  text-align: center;
+  transition: 0.3s;
+  // border-radius: 5px;
+  flex-direction: column;
+}
+.services .service-box.blue {
+  border-bottom: 3px solid $red;
+  .title-home {
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+}
+// .services .service-box .icon {
+//   // font-size: 36px;
+//   padding: 40px 20px;
+//   border-radius: 4px;
+//   position: relative;
+//   margin-bottom: 25px;
+//   display: inline-block;
+//   // line-height: 0;
+//   transition: 0.3s;
+// }
+.section-header {
+  text-align: center;
+  padding-bottom: 40px;
+  font-family: SulSans, sans-serif !important;
+}
 
-//RESTAURANT SHOW CARDS MEALS AND BEVERAGE//
+//============RESTAURANT SHOW CARDS MEALS AND BEVERAGE===========//
 .restaurant-menu-group__container {
   width: 100%;
   display: grid;
@@ -148,7 +194,7 @@
   }
 }
 
-//RESTAURANT SHOW CARDS MEALS AND BEVERAGE//
+
 
 
 /*Media Queries*/
