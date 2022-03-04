@@ -8,6 +8,7 @@
         <%=f.input :description_beverage %>
         <%=f.input :category_beverage %>
         <%=f.input :price_beverage %>
+        <%= f.input :photo, as: :file %>
         <%=f.submit "Submit beverage", class: "btn btn-primary" %>
       <% end %>
       <%= link_to 'Back', restaurants_path, class: "btn btn-secondary mt-4 w-100" %>

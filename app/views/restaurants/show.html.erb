@@ -13,7 +13,7 @@
 
     <ul>
       <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-light mt-4 " %>
- 
+
       <%= link_to 'Back', restaurants_path, class: "btn btn-light mt-4 "  %>
     </ul>
 
@@ -44,7 +44,8 @@
     <% @restaurant.menu_meals.each do |menu_meal| %>
 
       <div class="card-product">
-        <img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1292&q=80" />
+        <%= cl_image_tag menu_meal.photo.key, height: 300, width: 400, crop: :fill %>
+        <%# <img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1292&q=80" /> %>
         <div class="card-product-infos">
           <h2><%= menu_meal.meal_name%></h2>
           <p><%= menu_meal.description_meal %></p>

@@ -40,6 +40,6 @@ class MenuBeveragesController < ApplicationController
   end
 
   def menu_beverage_params
-    params.require(:menu_beverage).permit(:name_beverage, :portion_meal, :description_meal, :category_meal, :price_meal)
+    params.require(:menu_beverage).permit(:name_beverage, :portion_meal, :description_meal, :category_meal, :price_meal, :photo)
   end
 end
