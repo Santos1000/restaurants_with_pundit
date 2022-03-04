@@ -9,6 +9,7 @@ class MenuMealsController < ApplicationController
     @menu_meal = MenuMeal.new
     authorize @menu_meal
   end
+  
   def create
     @menu_meal = MenuMeal.new(menu_meal_params)
     @menu_meal.restaurant = @restaurant

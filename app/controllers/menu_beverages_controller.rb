@@ -2,13 +2,12 @@ class MenuBeveragesController < ApplicationController
   before_action :set_restaurant, only: [ :new, :create ]
 
   def index
-    @menu_beverage = Menu_beverage.where(user_id: params[:user_id])
+    @menu_beverage = MenuBeverage.where(user_id: params[:user_id])
   end
 
   def new
     # we need @restaurant in our `simple_form_for`
     @menu_beverage = MenuBeverage.new
-    #(permitted_attributes(MenuBeverage))
     authorize @menu_beverage
   end
 
@@ -40,6 +39,6 @@ class MenuBeveragesController < ApplicationController
   end
 
   def menu_beverage_params
-    params.require(:menu_beverage).permit(:name_beverage, :portion_meal, :description_meal, :category_meal, :price_meal, :photo)
+    params.require(:menu_beverage).permit(:name_beverage, :portion_beverage, :description_beverage, :category_beverage, :price_beverage, :photo)
   end
 end

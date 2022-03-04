@@ -1,12 +1,10 @@
-<div class="map" style="background-image: url('<%= @restaurant.picture_url %>')"></div>
+<%# <div class="map" style="background-image: url('<%= @restaurant.picture_url')"></div> %>
 <div class= "content-b">
   <p id="notice"><%= notice %></p>
   <div class="title_card row justify-content-between">
     <h1><%= @restaurant.name %></h1>
     <div>
       <p><%= @restaurant.location %></p>
-
-      <p><%= @restaurant.description %></p>
 
       <a><strong>User:</strong><%= @restaurant.user_id %></a>
     </div>
@@ -69,7 +67,8 @@
     <% @restaurant.menu_beverages.each do |menu_beverage| %>
 
       <div class="card-product">
-        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" />
+        <%= cl_image_tag menu_beverage.photo.key, height: 300, width: 400, crop: :fill %>
+        <%# <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" /> %>
         <div class="card-product-infos">
           <h2><%= menu_beverage.name_beverage%></h2>
           <p><%= menu_beverage.description_beverage %></p>
