@@ -9,6 +9,7 @@ class MenuMealsController < ApplicationController
     @menu_meal = MenuMeal.new
     authorize @menu_meal
   end
+  
   def create
     @menu_meal = MenuMeal.new(menu_meal_params)
     @menu_meal.restaurant = @restaurant
@@ -34,6 +35,6 @@ class MenuMealsController < ApplicationController
   end
 
   def menu_meal_params
-    params.require(:menu_meal).permit(:meal_name, :portion_meal, :description_meal, :category_meal, :price_meal)
+    params.require(:menu_meal).permit(:meal_name, :portion_meal, :description_meal, :category_meal, :price_meal, :photo)
   end
 end
