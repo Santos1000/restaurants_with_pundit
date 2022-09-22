@@ -6,3 +6,25 @@
 @import "cards";
 @import "footer";
 @import "background";
+@import "banners";
+
+.section-header {
+  text-align: center;
+  padding-bottom: 40px;
+  font-family: SulSans, sans-serif !important;
+}
+
+.btn-danger {
+  // position: relative;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out 0s, box-shadow 100ms ease-in-out 0s;
+  font-weight: normal;
+  // max-width: 50%;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(234, 29, 44);
+  font-family: sans-serif;
+}

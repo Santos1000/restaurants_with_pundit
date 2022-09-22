@@ -1,24 +1,23 @@
 <section id="start" class="start" >
-  <h1>RESTAURANT APP</h1>
-  <div class="container-home">
+      <div class="section-header">
+        <h1>RESTAURANT APP</h1>
+        <h1>Tudo pra facilitar seu dia a dia</h1>
+      </div>
+  <div class="container-home banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
     <div class="row" >
-
-      <p>Find me in app/views/pages/home.html.erb</p>
-      <div class="col-lg-6 d-flex flex-column justify-content-center">
+        <%# <button id= "btn"class="btn" type= "button">Get Started</button>
+        <div class="col-lg-12 hero-img">
+          <img  src = "https://res.cloudinary.com/dshygft5r/image/upload/v1645751978/cozinha_bxaa3v.jpg" > %>
+      <div class="container-h1" style="display: grid; gap: 48px">
+        <h1>60 milhões de pedidos em apenas um mês</h1>
+        <p>Esse é o alcance das lojas parceiras do iFood. Faça parte e alavanque suas vendas.</p>
+      </div>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <%= link_to "Cadastrar agora", new_user_session_path,
+         class: "btn btn-danger" %>
       </div>
 
-      <h1>60 milhões de pedidos em apenas um mês</h1>
-      <div class="text-center text-lg-start">
-        <button id= "btn"class="btn btn-dangerous" type= "button">Get Started</button>
-      </div>
 
-      <div class="col-lg-6 hero-img">
-        <img  src = "https://res.cloudinary.com/dshygft5r/image/upload/v1645751978/cozinha_bxaa3v.jpg" >
-
-      <%# <%= cl_image_tag("IMAGE_WITH_FACE_ID",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %> %>
-        <img class="img-fluid" src="" alt="">
-      </div>
 
     </div>
   </div>
@@ -31,12 +30,12 @@
     </div> %>
 
 <section id="services" class="services" >
-  <div class="container-home">
 
     <header class="section-header">
       <h1>Cadastre sua loja</h1>
       <p>Entre e ganhe 1 mês de mensalidade grátis!</p>
     </header>
+  <div class="container-home banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
 
     <div class="row gy-4">
 
@@ -77,23 +76,37 @@
         </div>
       </div>
     </div>
-    <div class = "justify-content-center">
+  </div>
+
+  <div class="row gy-6">
+    <div class="section-header">
       <h2>Venda mais com o iFood</h2>
+      <img src="..." class="rounded float-start" alt="...">
     </div>
   </div>
+
 </section>
 
 <footer>
-  <div class="footer">
-    <div class="footer-links">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <div class="footer-copyright">
-      This footer is made with <i class="fas fa-heart"></i> at Ruby
+  <div class="row gy-4">
+    <div class="footer footer-box">
+      <div class="col text-center">
+        <h2>Descubra</h2>
+        <p>Cadastre seu restaurante</p>
+      </div>
+      <div class="col text-center">
+        <h3>Social</h3>
+            <div class="footer-links">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+      </div>
+      <div class="col text-center">
+        <p>This footer is made with <i class="fas fa-heart"></i> at Ruby</p>
+      </div>
     </div>
   </div>
 </footer>
